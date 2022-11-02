@@ -21,7 +21,7 @@ const ExpenseForm = (props) => {
     //We create an object to callect all the data from our states
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate), //constructor for a nested date obj.
     };
     props.onSaveExpenseData(expenseData); //Received as a prop from a parent, NewExpense
