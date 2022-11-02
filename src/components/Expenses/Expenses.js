@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
   const [selectedYear, setSelectedYear] = useState("2022"); //now we send this handler as a prop t receive info from the child,
@@ -22,6 +23,7 @@ const Expenses = (props) => {
           selected={selectedYear}
           onChangeFilter={yearChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
